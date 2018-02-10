@@ -1,0 +1,100 @@
+---
+title: Estimación del área bajo la curva del progreso de enfermedad AUDPC
+author: Carlos Neftaly
+date: '2018-02-09'
+slug: estimacion-audpc
+categories:
+  - Epidemiologia
+  - Estadistica
+  - Fitopatologia
+  - R
+tags:
+  - AUDPC
+  - Fitopatologia
+  - R
+  - Severidad
+bibliography: audpc.bib
+
+---
+
+
+
+<p>El área bajo la curva del progreso de enfermedad es una medida cuantitava de la intensidad de la enferemedad en el tiempo. Esta es usada en fitopatología para comparar la resistencia a la enfermedad entre cultivares, sitios, estrategias de manejos, entre otras. Su estimación se basa en el método trapezoidal y el uso de la ecuación propuesta en <span class="citation">Jeger and Viljanen-Rollinson (2001)</span> para calcular el valor:</p>
+<p><span class="math display">\[ A_k=\sum_{i=1}^{N_i-1}\frac{y_i+y_{i+1}}{2}(t_{i+1}-t_i) \]</span></p>
+<p>Siendo <span class="math inline">\(Y\)</span> la severidad en un punto en <span class="math inline">\(t\)</span> dado.</p>
+<p>Veamos dos posibilidades de conducir este análisis en R:</p>
+<ol style="list-style-type: decimal">
+<li>En nuestro caso, creamos un vector con 4 mediciones de severidad:</li>
+</ol>
+<pre class="r"><code>s0 &lt;- 1
+s1 &lt;- 2
+s2 &lt;- 7
+s3 &lt;- 7.5
+severidad &lt;- c(s0, s1, s2, s3)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Agregar un segundo vector que contiene los tiempos de medición de la severidad:</li>
+</ol>
+<pre class="r"><code>t0 &lt;- 0
+t1 &lt;- 2
+t2 &lt;- 5
+t3 &lt;- 6
+tiempo &lt;- c(t0, t1, t2, t3)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Graficamos la severidad con respecto al tiempo obteniendo los trapecios:</li>
+</ol>
+<pre class="r"><code>plot(tiempo, severidad, ylim = c(0, (s3 + 1)), xlim = c(0, (t3 + 0.5)), xlab = &quot;Tiempo&quot;, 
+    ylab = &quot;Severidad (%)&quot;, type = &quot;o&quot;, pch = 19, col = &quot;mediumblue&quot;, main = &quot;Cálculo de AUDPC&quot;)
+mtext(&quot;=t0&quot;, 1, at = 0.3, 1)
+mtext(&quot;=t1&quot;, 1, at = 2.3, 1)
+mtext(&quot;=t2&quot;, 1, at = 5.3, 1)
+mtext(&quot;=t3&quot;, 1, at = 6.3, 1)
+
+# Ahora ilustremos el área bajo la curva de desarollo de la enfermedad con
+# rectángulos:
+rect(t0, 0, t1, ((s0 + s1)/2), border = &quot;orange&quot;)
+text(1, 1, &quot;A1&quot;)
+rect(t1, 0, t2, ((s1 + s2)/2), border = &quot;orange&quot;)
+text(((t1 + t2)/2), (((s1 + s2)/2)/2), &quot;S2&quot;)
+segments(0.4, ((s1 + s2)/2), t2, ((s1 + s2)/2), col = &quot;black&quot;, lty = &quot;18&quot;)
+text(0, ((s1 + s2)/2), ((s1 + s2)/2))
+rect(t2, 0, t3, ((s2 + s3)/2), border = &quot;orange&quot;)
+text(((t2 + t3)/2), (((s2 + s3)/2)/2), &quot;S3&quot;)
+segments(0.4, ((s2 + s3)/2), t2, ((s2 + s3)/2), col = &quot;black&quot;, lty = &quot;18&quot;)
+text(0, ((s2 + s3)/2), ((s2 + s3)/2))</code></pre>
+<p><img src="/post/2018-02-09-estimación-audpc_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Ahora construimos una función para calcular la AUDPC:</li>
+</ol>
+<pre class="r"><code>audpc &lt;- function(severidad, tiempo) {
+
+    n &lt;- length(tiempo)
+    promsev &lt;- matrix(-1, (n - 1))
+    inttiem &lt;- matrix(-1, (n - 1))
+    for (i in 1:(n - 1)) {
+
+        promsev[i] &lt;- mean(c(severidad[i], severidad[i + 1]))
+        inttiem[i] &lt;- tiempo[i + 1] - tiempo[i]
+    }
+    producto &lt;- promsev * inttiem
+    sum(producto)
+
+}</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Obtenemos el valor del AUDPC usando la función previamente construida:</li>
+</ol>
+<pre class="r"><code>audpc(severidad, tiempo)</code></pre>
+<pre><code>## [1] 23.75</code></pre>
+<p>Otro posibilidad para obtener esta estimación es usar el paquete <a href="https://cran.r-project.org/web/packages/agricolae/vignettes/tutorial.pdf"><em>agricolae</em></a></p>
+<pre class="r"><code>library(agricolae)
+agricolae::audpc(severidad,tiempo)</code></pre>
+<pre><code>## evaluation 
+##      23.75</code></pre>
+<div id="referencias" class="section level2">
+<h2>Referencias</h2>
+<p>Sparks, A..H., P.D. Esker, G. Antony, L. Campbell, E.E. Frank, L. Huebel, M.N. Rouse, B.Van Allen, and K.A. Garrett, 2008. Ecology and epidemiology in R: Introduction to spatial analysis. The Plant Health Instructor. On-line: <a href="DOI:10.1094/PHI-A-2008-0129-03" class="uri">DOI:10.1094/PHI-A-2008-0129-03</a>. The Plant Health Instructor. <a href="DOI:10.1094/PHI-A-2008-0129-02" class="uri">DOI:10.1094/PHI-A-2008-0129-02</a>.</p>
+<div id="refs" class="references">
+<div id="ref-Jeger2001">
+<p>Jeger, M. J., and S. L. H. Viljanen-Rollinson. 2001. “The Use of the Area Under the Disease-Progress Curve (Audpc) to Assess Quantitative Disease Resistance in Crop Cultivars.” <em>Theoretical and Applied Genetics</em> 102 (1): 32–40. doi:<a href="https://doi.org/10.1007/s001220051615">10.1007/s001220051615</a>.</p>
+</div>
+</div>
+</div>

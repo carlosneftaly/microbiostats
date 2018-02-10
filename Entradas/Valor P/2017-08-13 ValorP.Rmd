@@ -1,0 +1,16 @@
+---
+title: "Interpretando correctamente  _valores P_ "
+author: "Carlos Neftaly Lozano"
+date: "13 de agosto de 2017"
+output: html_document
+---
+
+El uso del _valor P_ es ampliamente extendido en ciencia. Éste nos dice si los resultados de una prueba de hipótesis son estadísticamente significativos. Científicos los usan en todas partes, encontrándose valores P en _pruebas t_, _ANOVAs_ y _análisis de regresón_. Los _valor P_  se ha vuelto tan importantes en la ciencia que ha tomado vida propia, determinado desde qué estudios se publican en revistas especializadas hasta que proyectos reciben financiación. 
+
+Pese a su amplio uso, los _valores P_ son frecuentemente mal interpretados. Creyéndose que los resultados de estas pruebas producen información como la siguiente: 
+
+    * La probabilidad que la hipótesis nula sea cierta. 
+    * La probabilidad de que la hipótesis alternativa sea cierta. 
+    * La probabilidad de que los hallazgos sean reproducibles.
+    * Si los resultados son importantes o verdaderos. 
+    

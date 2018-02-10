@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rmarkdown on R-para Microbios</title>
+    <link>/tags/rmarkdown/</link>
+    <description>Recent content in Rmarkdown on R-para Microbios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>neftalyl@microbiostats.com (Carlos Neftaly)</managingEditor>
+    <webMaster>neftalyl@microbiostats.com (Carlos Neftaly)</webMaster>
+    <lastBuildDate>Tue, 22 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diapositivas de apoyo</title>
+      <link>/page/diapo/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/page/diapo/</guid>
+      <description>Presentación del curso
+ Estadística descriptiva
+ Introducción al Diseño de Experimentos descriptiva
+ Inferencia estadística y Pruebas t
+ Análisis de varianza (ANOVA)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,4 @@
+"0","ggplot(CO2, aes(conc, uptake)) + geom_line()"
+"2","Error in ggplot(CO2, aes(conc, uptake)) : 
+  could not find function ""ggplot""
+"

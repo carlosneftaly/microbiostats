@@ -1,0 +1,84 @@
+---
+title: Interpretando correctamente Valores P
+author: Carlos Neftaly
+date: '2017-08-23'
+slug: interpretando-correctamente-valores-p
+categories:
+  - Estadística
+  - R
+tags:
+  - Valor P
+  - Inferencia
+  - Filosofía
+---
+
+El uso del _valor P_ es ampliamente extendido en la ciencia. Investigadores los usan en todas partes, encontrándose valores P en _pruebas t_, _ANOVAs_, _análisis de regresión_ , entre otras. Éste permite inferir si los resultados de una prueba de hipótesis son estadísticamente significativos. Esta probabilidad, altamente controversial, se ha vuelto tan importante en la ciencia moderna que ha tomado vida propia, determinando desde qué estudios se publican en revistas especializadas hasta que proyectos reciben financiación. 
+
+Pese a su amplio uso, los _valores P_ son frecuentemente mal interpretados. Encontrádose conclusiones como las siguientes:  
+
+
+
++ La probabilidad que la hipótesis nula sea cierta. 
+
++ La probabilidad de que la hipótesis alternativa sea cierta. 
+
++ La probabilidad de que los hallazgos sean reproducibles.
+
++ Si los resultados son importantes o verdaderos. 
+
++ Si el experimento fue bien conducido.
+    
+
+La prevalencia de estas malas interpretaciones demuestra con claridad que el concepto del valor P es resbaladizo. Pero tranquilos, en esta entrada intentaré explicar de manera intuitiva y simple los valores P de manera que se eviten malas interpretaciones y problemas serios a la hora de inferir sobre los resultados de un experimento. Empecemos... 
+
+Bajo el marco lógico que se desarrolla el  _valor P_ uno de los conceptos centrales es el de **prueba de hipótesis**. Éste evalúa dos afirmaciones mutuamente excluyente acerca de una población en dirección a determinar cual de ellas es mejor soportada por los datos muestrales. Las dos afirmaciones en cuestión son llamadas **hipótesis nula** e **hipótesis alternativa**. En el caso de la hipótesis nula, el nombre <q> _nula_</q> es usado para recordarnos que estamos actuando como escépticos: damos crédito a la posibilidad de que no hayan diferencias entre los grupos o tratamientos.
+
+Para comprender esta idea, imaginemos un estudio hipotético para un nuevo antibiótico el cual de partida sabemos que es totalmente inefectivo, es decir __la hipótesis nula es verdadera__. No hay diferencias a nivel de poblacional entre los sujetos que tomaron el antibiótico y aquellos que no. 
+
+A pesar que la hipótesis nula es cierta, nosotros podríamos observar, con cierta probabilidad, algunas diferencias entre los sujetos que tomaron el antibiótico y aquellos que no. Este efecto estaría dado, principalmente, por error aleatorio en el muestreo mas que un efecto real dado por la condición a la que fueron sometidos los sujetos. Por lo tanto, la conclusión lógica sería que el efecto observado es producido por el error de muestreo y no por el tratamiento. 
+
+
+## ¿Qué es el _valor P_?
+
+En breve, estos valores evalúan la consistencia de sus datos o estadísticas muestrales con la hipótesis nula. Específicamente, si la hipótesis nula es correcta, ¿cuál es la probabilidad de obtener un efecto al menos tan grande como el de su muestra?
+
+
++ _Valores P_ __altos__: Los datos muestrales son consistente con una hipótesis nula que es verdadera. 
+    
+    
++ _Valores P_ __bajos__: Los datos muestrales __NO__ son consistente con una hipótesis nula que es verdadera.     
+
+
+Si el valor P obtenido es lo suficientemente pequeño, se puede concluir que los datos son incompatibles con la hipótesis nula, por la tanto se puede __rechazar__ la hipótesis nula. 
+
+## ¿Cómo lo interpretamos correctamente?
+
+Volvamos al experimento hipotético del antibiótico. Supongamos que en una prueba de hipótesis obtuvimos un _valor P de 0.01_. La interpretación correcta de esta resultado sería: 
+
+<blockquote> Si tomar el  antibiótico no tiene efecto en la población, 1% de los estudios obtendrían el efecto observado en el experimento, o uno mayor, solo por error aleatorio en el muestreo.</blockquote>
+
+Así, la única pregunta que podemos resolver con el _valor P_ es ¿Qué tan probable es ver sus resultados suponiendo que la hipótesis nula es __verdadera__?
+
+## ¿Qué son los niveles de significancia ($\alpha$)? 
+
+Finalmente, para completar la interpretación hay que incluir el nivel de significancia dentro este marco lógico, pese a la gran controversia que ha generado históricamente. Este valor es un estándar <q> probatorio</q> que los investigadores fijan antes del estudio (típicamente se usa $\alpha = 0.05$), indicándonos que tan fuerte debe ser la evidencia para contradecir la hipótesis nula antes de rechazarla para toda la población. En otras palabras, es la probabilidad de inferir que hay efecto cuando realmente no lo hay. 
+
+## Regla de decisión 
+Con todo lo anterior en mente, los valores P y los niveles significancia se usan en conjunto, pese a la controversia, de la siguiente manera: 
+
++ _Valores P_ __altos__ ($P>0.05$): Indica evidencia débil contra la hipótesis nula, por lo tanto no  se puede rechazar la hipótesis nula.
+    
+    
++ _Valores P_ __bajos__ ($P \leq 0.05$): Indica una fuerte evidencia contra la hipótesis nula, por lo que rechazar la hipótesis nula es lo más apropiado.
+
+## Referencias
+
+
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i> [Toward Evidence-Based Medical Statistics. 1: The P Value Fallacy](http://annals.org/aim/article/712762/toward-evidence-based-medical-statistics-1-p-value-fallacy) 
+
+
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i> [Calibration of P Values for Testing Precise Null Hypotheses](http://faculty.washington.edu/jonno/SISG-2011/lectures/sellkeetal01.pdf) 
+
+
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i> [The ASA's Statement on p-Values: Context, Process, and Purpose](http://www.tandfonline.com/doi/pdf/10.1080/00031305.2016.1154108?needAccess=true) 
+

@@ -1,0 +1,64 @@
+---
+title: Interpretando correctamente Valores P
+author: Carlos Neftaly
+date: '2017-08-23'
+slug: interpretando-correctamente-valores-p
+categories:
+  - Estadística
+  - R
+tags:
+  - Valor P
+  - Inferencia
+  - Filosofía
+---
+
+
+
+<p>El uso del <em>valor P</em> es ampliamente extendido en la ciencia. Investigadores los usan en todas partes, encontrándose valores P en <em>pruebas t</em>, <em>ANOVAs</em>, <em>análisis de regresión</em> , entre otras. Éste permite inferir si los resultados de una prueba de hipótesis son estadísticamente significativos. Esta probabilidad, altamente controversial, se ha vuelto tan importante en la ciencia moderna que ha tomado vida propia, determinando desde qué estudios se publican en revistas especializadas hasta que proyectos reciben financiación.</p>
+<p>Pese a su amplio uso, los <em>valores P</em> son frecuentemente mal interpretados. Encontrádose conclusiones como las siguientes:</p>
+<ul>
+<li><p>La probabilidad que la hipótesis nula sea cierta.</p></li>
+<li><p>La probabilidad de que la hipótesis alternativa sea cierta.</p></li>
+<li><p>La probabilidad de que los hallazgos sean reproducibles.</p></li>
+<li><p>Si los resultados son importantes o verdaderos.</p></li>
+<li><p>Si el experimento fue bien conducido.</p></li>
+</ul>
+<p>La prevalencia de estas malas interpretaciones demuestra con claridad que el concepto del valor P es resbaladizo. Pero tranquilos, en esta entrada intentaré explicar de manera intuitiva y simple los valores P de manera que se eviten malas interpretaciones y problemas serios a la hora de inferir sobre los resultados de un experimento. Empecemos…</p>
+<p>Bajo el marco lógico que se desarrolla el <em>valor P</em> uno de los conceptos centrales es el de <strong>prueba de hipótesis</strong>. Éste evalúa dos afirmaciones mutuamente excluyente acerca de una población en dirección a determinar cual de ellas es mejor soportada por los datos muestrales. Las dos afirmaciones en cuestión son llamadas <strong>hipótesis nula</strong> e <strong>hipótesis alternativa</strong>. En el caso de la hipótesis nula, el nombre <q> <em>nula</em></q> es usado para recordarnos que estamos actuando como escépticos: damos crédito a la posibilidad de que no hayan diferencias entre los grupos o tratamientos.</p>
+<p>Para comprender esta idea, imaginemos un estudio hipotético para un nuevo antibiótico el cual de partida sabemos que es totalmente inefectivo, es decir <strong>la hipótesis nula es verdadera</strong>. No hay diferencias a nivel de poblacional entre los sujetos que tomaron el antibiótico y aquellos que no.</p>
+<p>A pesar que la hipótesis nula es cierta, nosotros podríamos observar, con cierta probabilidad, algunas diferencias entre los sujetos que tomaron el antibiótico y aquellos que no. Este efecto estaría dado, principalmente, por error aleatorio en el muestreo mas que un efecto real dado por la condición a la que fueron sometidos los sujetos. Por lo tanto, la conclusión lógica sería que el efecto observado es producido por el error de muestreo y no por el tratamiento.</p>
+<div id="que-es-el-valor-p" class="section level2">
+<h2>¿Qué es el <em>valor P</em>?</h2>
+<p>En breve, estos valores evalúan la consistencia de sus datos o estadísticas muestrales con la hipótesis nula. Específicamente, si la hipótesis nula es correcta, ¿cuál es la probabilidad de obtener un efecto al menos tan grande como el de su muestra?</p>
+<ul>
+<li><p><em>Valores P</em> <strong>altos</strong>: Los datos muestrales son consistente con una hipótesis nula que es verdadera.</p></li>
+<li><p><em>Valores P</em> <strong>bajos</strong>: Los datos muestrales <strong>NO</strong> son consistente con una hipótesis nula que es verdadera.</p></li>
+</ul>
+<p>Si el valor P obtenido es lo suficientemente pequeño, se puede concluir que los datos son incompatibles con la hipótesis nula, por la tanto se puede <strong>rechazar</strong> la hipótesis nula.</p>
+</div>
+<div id="como-lo-interpretamos-correctamente" class="section level2">
+<h2>¿Cómo lo interpretamos correctamente?</h2>
+<p>Volvamos al experimento hipotético del antibiótico. Supongamos que en una prueba de hipótesis obtuvimos un <em>valor P de 0.01</em>. La interpretación correcta de esta resultado sería:</p>
+<blockquote>
+Si tomar el antibiótico no tiene efecto en la población, 1% de los estudios obtendrían el efecto observado en el experimento, o uno mayor, solo por error aleatorio en el muestreo.
+</blockquote>
+<p>Así, la única pregunta que podemos resolver con el <em>valor P</em> es ¿Qué tan probable es ver sus resultados suponiendo que la hipótesis nula es <strong>verdadera</strong>?</p>
+</div>
+<div id="que-son-los-niveles-de-significancia-alpha" class="section level2">
+<h2>¿Qué son los niveles de significancia (<span class="math inline">\(\alpha\)</span>)?</h2>
+<p>Finalmente, para completar la interpretación hay que incluir el nivel de significancia dentro este marco lógico, pese a la gran controversia que ha generado históricamente. Este valor es un estándar <q> probatorio</q> que los investigadores fijan antes del estudio (típicamente se usa <span class="math inline">\(\alpha = 0.05\)</span>), indicándonos que tan fuerte debe ser la evidencia para contradecir la hipótesis nula antes de rechazarla para toda la población. En otras palabras, es la probabilidad de inferir que hay efecto cuando realmente no lo hay.</p>
+</div>
+<div id="regla-de-decision" class="section level2">
+<h2>Regla de decisión</h2>
+<p>Con todo lo anterior en mente, los valores P y los niveles significancia se usan en conjunto, pese a la controversia, de la siguiente manera:</p>
+<ul>
+<li><p><em>Valores P</em> <strong>altos</strong> (<span class="math inline">\(P&gt;0.05\)</span>): Indica evidencia débil contra la hipótesis nula, por lo tanto no se puede rechazar la hipótesis nula.</p></li>
+<li><p><em>Valores P</em> <strong>bajos</strong> (<span class="math inline">\(P \leq 0.05\)</span>): Indica una fuerte evidencia contra la hipótesis nula, por lo que rechazar la hipótesis nula es lo más apropiado.</p></li>
+</ul>
+</div>
+<div id="referencias" class="section level2">
+<h2>Referencias</h2>
+<p><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://annals.org/aim/article/712762/toward-evidence-based-medical-statistics-1-p-value-fallacy">Toward Evidence-Based Medical Statistics. 1: The P Value Fallacy</a></p>
+<p><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://faculty.washington.edu/jonno/SISG-2011/lectures/sellkeetal01.pdf">Calibration of P Values for Testing Precise Null Hypotheses</a></p>
+<p><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="http://www.tandfonline.com/doi/pdf/10.1080/00031305.2016.1154108?needAccess=true">The ASA’s Statement on p-Values: Context, Process, and Purpose</a></p>
+</div>

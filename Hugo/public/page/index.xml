@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on R-para Microbios</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on R-para Microbios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>neftalyl@microbiostats.com (Carlos Neftaly)</managingEditor>
+    <webMaster>neftalyl@microbiostats.com (Carlos Neftaly)</webMaster>
+    <lastBuildDate>Tue, 22 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diapositivas de apoyo</title>
+      <link>/page/diapo/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/page/diapo/</guid>
+      <description>Presentación del curso
+ Estadística descriptiva
+ Introducción al Diseño de Experimentos descriptiva
+ Inferencia estadística y Pruebas t
+ Análisis de varianza (ANOVA)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/page/diapo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/page/diapo/</guid>
+      <description>Diapositivas de apoyocode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.table th:not([align]) {text-align: left;}.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/page/about/</guid>
+      <description>Soy microbiólogo industrial y ambiental con un máster en Biología en la Universidad de Antioquia, Medellín, Colombia. La mayoría de mi vida académica la he desarrollado en el grupo de Bacteriología Agrícola y Ambiental, enfocado la interacción planta-microorganismo, específicamente en bacterias del género Bacillus. Al par, de manera autodidacta y con algunos cursos formales, he desarrollado mi pasión por el análisis de datos y diseño de experimentos.
+Adicionalmente, me he desempeñado como profesor de curso como Diseño de Experimentos para Microbiólogos, Fisiología y Ecología Microbiana, en la Escuela de Microbiología de la Universidad de Antioquia.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grãficos on R-para Microbios</title>
+    <link>/tags/gr%C3%A3ficos/</link>
+    <description>Recent content in Grãficos on R-para Microbios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>neftalyl@microbiostats.com (Carlos Neftaly)</managingEditor>
+    <webMaster>neftalyl@microbiostats.com (Carlos Neftaly)</webMaster>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gr%C3%A3ficos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ggplot2</title>
+      <link>/post/ggplot2/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/post/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

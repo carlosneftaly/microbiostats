@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Valor P on R-para Microbios</title>
+    <link>/tags/valor-p/</link>
+    <description>Recent content in Valor P on R-para Microbios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>neftalyl@microbiostats.com (Carlos Neftaly)</managingEditor>
+    <webMaster>neftalyl@microbiostats.com (Carlos Neftaly)</webMaster>
+    <lastBuildDate>Wed, 23 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/valor-p/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interpretando correctamente Valores P</title>
+      <link>/post/interpretando-correctamente-valores-p/</link>
+      <pubDate>Wed, 23 Aug 2017 00:00:00 +0000</pubDate>
+      <author>neftalyl@microbiostats.com (Carlos Neftaly)</author>
+      <guid>/post/interpretando-correctamente-valores-p/</guid>
+      <description>El uso del valor P es ampliamente extendido en la ciencia. Investigadores los usan en todas partes, encontrándose valores P en pruebas t, ANOVAs, análisis de regresión , entre otras. Éste permite inferir si los resultados de una prueba de hipótesis son estadísticamente significativos. Esta probabilidad, altamente controversial, se ha vuelto tan importante en la ciencia moderna que ha tomado vida propia, determinando desde qué estudios se publican en revistas especializadas hasta que proyectos reciben financiación.</description>
+    </item>
+    
+  </channel>
+</rss>
